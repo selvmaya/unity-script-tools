@@ -31,7 +31,10 @@ namespace Tools.Types
 			return $"{(Enabled ? "Enabled" : "Disabled")}<{typeof(T).GetNiceName()}>({Value.ToString()})";
 			#endif
 			#endif
+			#pragma warning disable CS0162 // Unreachable code detected
+			// ReSharper disable once HeuristicUnreachableCode
 			return $"{(Enabled ? "Enabled" : "Disabled")}<{typeof(T).FullName}>({Value.ToString()})";
+			#pragma warning restore CS0162 // Unreachable code detected
 		}
 
 		#region Conversion and construction
